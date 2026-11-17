@@ -1175,9 +1175,9 @@
 "ogerpon-cornerstone-mask",1017,"grass","rock",TRUE,NA,TRUE,"Cornerstone-mask",TRUE,1,1,"green",5,12,398,47,88,550,80,120,84,60,96,110
 "archaludon",1018,"steel","dragon",TRUE,NA,FALSE,"Base",FALSE,2,2,"white",10,20,600,79,132,600,90,105,130,125,65,85
 "hydrapple",1019,"grass","dragon",TRUE,NA,FALSE,"Base",FALSE,3,3,"green",10,18,930,71,205,540,106,80,110,120,80,44
-"gouging-fire",1020,"fire","dragon",TRUE,NA,FALSE,"Base",FALSE,1,1,"brown",10,35,5900,138,1301,590,105,115,121,65,93,91
+"gouging-fire",1020,"fire","dragon",TRUE,NA,TRUE,"Base",FALSE,1,1,"brown",10,35,5900,138,1301,590,105,115,121,65,93,91
 "raging-bolt",1021,"electric","dragon",TRUE,NA,TRUE,"Base",FALSE,1,1,"yellow",10,52,4800,205,1058,590,125,73,91,137,89,75
-"iron-boulder",1022,"rock","psychic",TRUE,NA,FALSE,"Base",FALSE,1,1,"gray",10,15,1625,59,358,590,90,120,80,68,108,124
+"iron-boulder",1022,"rock","psychic",TRUE,NA,TRUE,"Base",FALSE,1,1,"gray",10,15,1625,59,358,590,90,120,80,68,108,124
 "iron-crown",1023,"steel","psychic",TRUE,NA,TRUE,"Base",FALSE,1,1,"blue",10,16,1560,63,344,590,90,72,100,122,108,98
 "terapagos",1024,"normal",NA,FALSE,NA,TRUE,"Base",FALSE,1,1,"blue",255,2,65,8,14,450,90,65,85,65,85,60
 "terapagos-terastal",1024,"normal",NA,FALSE,NA,TRUE,"Terastal",TRUE,1,1,"blue",255,3,160,12,35,600,95,95,110,105,110,85

@@ -15,7 +15,8 @@ pokemon$`Legendary Status`[
     c("meganium","yanmega")
 ] <- FALSE
 
-# Fixed non legendary mega-evolution Pokemon into FALSE Legendary Status
+# Fixed non legendary and non legendary mega-evolution Pokemon into 
+# FALSE Legendary Status
 pokemon$`Legendary Status`[
   pokemon$Name %in% 
     c("venusaur-mega", "charizard-mega-x", "charizard-mega-y", "blastoise-mega",
@@ -28,8 +29,16 @@ pokemon$`Legendary Status`[
       "sharpedo-mega", "camerupt-mega", "altaria-mega", "absol-mega",
       "glalie-mega", "salamence-mega", "metagross-mega", "lopunny-mega",
       "garchomp-mega", "lucario-mega", "abomasnow-mega", "gallade-mega",
-      "audino-mega")
+      "audino-mega", "great-tusk", "scream-tail", "brute-bonnet", "flutter-mane",
+      "lither-wing", "sandy-shocks", "iron-treads", "iron-bundle", "iron-hands",
+      "iron-jugulis", "iron-moth", "iron-thorns")
 ] <- FALSE
+
+# Fixed Legendary Pokemon to legendary status
+pokemon$`Legendary Status`[
+  pokemon$Name %in% 
+    c("iron-boulder","gouging-fire")
+] <- TRUE
 
 # Changing Generation from objects/word into integers (1 to 9)
 gen_number <- c("i"=1, "ii"=2, "iii"=3, "iv"=4, "v"=5,
