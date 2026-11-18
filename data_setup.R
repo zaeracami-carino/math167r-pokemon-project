@@ -40,18 +40,11 @@ pokemon$`Legendary Status`[
     c("iron-boulder","gouging-fire")
 ] <- TRUE
 
-# Changing Generation from objects/word into integers (1 to 9)
-gen_number <- c("i"=1, "ii"=2, "iii"=3, "iv"=4, "v"=5,
-                "vi"=6, "vii"=7, "viii"=8, "ix"=9)
-pokemon$Generation <- as.integer(gen_number[tolower(
-  gsub("generation-","",pokemon$Generation))]
-)
-
 # Use this code to look at the cleaned data set
 View(pokemon)
 
 # New CSV File for the Cleaned Pokemon Data Set
-write.csv(cleaned_pokemon, "pokemon_cleaned.csv", row.names = FALSE)
+write.csv(pokemon, "pokemon_cleaned.csv", row.names = FALSE)
 
 # USE THIS CODE TO LOAD CLEAN POKEMON DATA SET
 cleaned_pokemon <- read.csv("pokemon_cleaned.csv")
@@ -118,11 +111,6 @@ View(non_legendary_stats)
 
 # Correlation Function
 cor_function <- function(data1, data2) {
-  # Remove Missing Data
-  #validData <- complete.cases(data1, data2)
-  #cleanData1 <- data1[validData]
-  #cleanData2 <- data2[validData]
-  
   # Calculates Correlation Coefficient
   correlation_coe <- cor(data1, data2, use = "complete.obs")
   
@@ -178,8 +166,6 @@ regular_health_v_weight <- cor_function(regular$Health, regular$Weight..lbs.)
 all_health_v_height <- cor_function(all_pokemon$Health, all_pokemon$Height..in.)
 legendary_health_v_height <- cor_function(legendary$Health, legendary$Height..in.)
 regular_health_v_height <- cor_function(regular$Health, regular$Height..in.)
-
-# Written Interpretations
 
 # =============================
 # Basic Plots 
