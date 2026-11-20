@@ -57,12 +57,18 @@ transparent_darkgrey <- adjustcolor("darkgrey", alpha.f = 0.6)
 plot(
   all_pokemon$Attack,
   all_pokemon$Health,
-  col = transparent_purple,
+  col = transparent_darkgrey,
   pch = 16,
   cex = 0.50,
   main = "Pokemon Health vs Attack",
   xlab = "Attack",
   ylab = "Health",
+)
+#trendline
+abline(
+  lm(all_pokemon$Health ~ all_pokemon$Attack),
+  col = "black",
+  lwd = 2
 )
 
 #health vs weight scatterplot
@@ -78,14 +84,19 @@ range(all_pokemon$Weight..lbs., na.rm = TRUE)
 plot(
   all_pokemon$Weight..lbs.,
   all_pokemon$Health,
-  col = transparent_purple,
+  col = transparent_darkgrey,
   pch = 16,
   cex = 0.50,
   main = "Pokemon Health vs. Weight",
   xlab = "Weight (lbs)",
   ylab = "Health"
 )
-
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Weight..lbs),
+       col = "black",
+       lwd = 2
+)
+  
 #health vs height scatterplot
 #checking height data
 #checks data type
@@ -105,6 +116,11 @@ plot(
   main = "Pokemon Health vs Height",
   xlab = "Height (in)",
   ylab = "Health"
+)
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Height..in.),
+       col = "black",
+       lwd = 2
 )
 
 #health vs speed scatterplot
@@ -127,6 +143,11 @@ plot(
   xlab = "Speed",
   ylab = "Health"
 )
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Speed),
+       col = "black",
+       lwd = 2
+)
 
 #health vs defense scatterplot
 #checking defense data for data type, missing values and min/max
@@ -144,6 +165,11 @@ plot(
   main = "Health vs Defense",
   xlab = "Defense",
   ylab = "Health"
+)
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Defense),
+       col = "black",
+       lwd = 2
 )
 
 #health vs special attack
@@ -163,7 +189,11 @@ plot(
   xlab = "Special Attack",
   ylab = "Health"
 )
-
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Special.Attack),
+       col = "black",
+       lwd = 2
+)
 
 #health by legendary status boxplot
 #verifying legendary status
