@@ -22,7 +22,7 @@ sum(hist(
   all_pokemon$Health,
   breaks = 10,
   plot = FALSE)
-  $counts)
+  $counts) 
 
 #histogram graph
 hist(
