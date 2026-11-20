@@ -75,7 +75,6 @@ sum(is.na(all_pokemon$Weight..lbs.))
 range(all_pokemon$Weight..lbs., na.rm = TRUE)
 
 #scatterplot graph
-trasnparent_darkgrey <- adjustcolor("darkgrey", alpha.f = 0.6 )
 plot(
   all_pokemon$Weight..lbs.,
   all_pokemon$Health,
@@ -86,6 +85,85 @@ plot(
   xlab = "Weight (lbs)",
   ylab = "Health"
 )
+
+#health vs height scatterplot
+#checking height data
+#checks data type
+class(all_pokemon$Height..in.)
+#counts missing height values
+sum(is.na(all_pokemon$Height..in.))
+#shows min and max height values
+range(all_pokemon$Height..in., na.rm = TRUE)
+
+#scatterplot graph 
+plot(
+  all_pokemon$Height..in.,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Pokemon Health vs Height",
+  xlab = "Height (in)",
+  ylab = "Health"
+)
+
+#health vs speed scatterplot
+#checking speed data
+#check data type
+class(all_pokemon$Speed)
+#counts missing Speed values
+sum(is.na(all_pokemon$Speed))
+#shows min and max values 
+range(all_pokemon$Speed, na.rm = TRUE)
+
+#scatterplot graph
+plot(
+  all_pokemon$Speed,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Pokemon Health vs Speed",
+  xlab = "Speed",
+  ylab = "Health"
+)
+
+#health vs defense scatterplot
+#checking defense data for data type, missing values and min/max
+class(all_pokemon$Defense)
+sum(is.na(all_pokemon$Defense))
+range(all_pokemon$Defense, na.rm = TRUE)
+
+#scatterplot graph
+plot(
+  all_pokemon$Defense,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Health vs Defense",
+  xlab = "Defense",
+  ylab = "Health"
+)
+
+#health vs special attack
+#checking special attack data types, missing values and min/max
+class(all_pokemon$Special.Attack)
+sum(is.na(all_pokemon$Special.Attack))
+range(all_pokemon$Special.Attack, na.rm = TRUE)
+
+#scatterplot graph
+plot(
+  all_pokemon$Special.Attack,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Health vs Special Attack",
+  xlab = "Special Attack",
+  ylab = "Health"
+)
+
 
 #health by legendary status boxplot
 #verifying legendary status
@@ -98,7 +176,7 @@ boxplot(
   #category values gray = non legend, gold = legend
   col = c("red", "gold"), 
   border = "black",
-  outcex = 0.5,
+  outcex = 0.50,
   names = c("Non-Legendary", "Legendary"),
   horizontal = TRUE,
   main = "Pokemon Health by Legendary Status",
