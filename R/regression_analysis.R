@@ -1,4 +1,5 @@
 library(tidyverse)
+install.packages(car)
 library(car)
 
 pokemon <- read_csv(
