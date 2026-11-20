@@ -1,7 +1,7 @@
 #visuals 
 
 #importing cleaned data set
-cleaned_pokemon <- read.csv("pokemon_cleaned.csv")
+cleaned_pokemon <- read.csv("data/pokemon_cleaned.csv")
 all_pokemon <- cleaned_pokemon
 
 #checking to see if data imported correctly
@@ -75,7 +75,7 @@ sum(is.na(all_pokemon$Weight..lbs.))
 range(all_pokemon$Weight..lbs., na.rm = TRUE)
 
 #scatterplot graph
-trasnparent_darkgrey <- adjustcolor("darkgrey", alpha.f = 0.6 )
+transparent_darkgrey <- adjustcolor("darkgrey", alpha.f = 0.6 )
 plot(
   all_pokemon$Weight..lbs.,
   all_pokemon$Health,

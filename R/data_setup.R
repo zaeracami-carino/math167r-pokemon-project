@@ -41,13 +41,14 @@ pokemon$`Legendary Status`[
 ] <- TRUE
 
 # Use this code to look at the cleaned data set
-View(pokemon)
+head(pokemon)
+str(pokemon)
 
 # New CSV File for the Cleaned Pokemon Data Set
-write.csv(pokemon, "pokemon_cleaned.csv", row.names = FALSE)
+write.csv(pokemon, "data/pokemon_cleaned.csv", row.names = FALSE)
 
 # USE THIS CODE TO LOAD CLEAN POKEMON DATA SET
-cleaned_pokemon <- read.csv("pokemon_cleaned.csv")
+cleaned_pokemon <- read.csv("data/pokemon_cleaned.csv")
 
 # =============================================
 # Descriptive Data Processing - Zaider Pimentel
@@ -99,10 +100,10 @@ all_stats <- descriptive_funct(all_pokemon, "All Pokemon")
 legendary_stats <- descriptive_funct(legendary, "Legendary Pokemon")
 non_legendary_stats <- descriptive_funct(regular, "Non-Lengendary Pokemon")
 
-# Viewing the Summarized Data for all, only lengendary, and non-lengendary Pokemon
-View(all_stats)
-View(legendary_stats)
-View(non_legendary_stats)
+# Viewing the Summarized Data for all, only legendary, and non-legendary Pokemon
+print(head(all_stats))
+print(head(legendary_stats))
+print(head(non_legendary_stats))
 
 # =====================================
 # Correlation Testing - Zaider Pimentel
