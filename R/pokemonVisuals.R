@@ -1,7 +1,7 @@
 #visuals 
 
 #importing cleaned data set
-cleaned_pokemon <- read.csv("pokemon_cleaned.csv")
+cleaned_pokemon <- read.csv("data/pokemon_cleaned.csv")
 all_pokemon <- cleaned_pokemon
 
 #checking to see if data imported correctly
@@ -32,7 +32,7 @@ hist(
   border = "black",
   main = "Distribution of Pokemon Health",
   xlab = "Health", 
-  ylab = "Frequency",
+  ylab = "Frequency"
 )
 
 #health vs attack scatterplot
@@ -57,12 +57,19 @@ transparent_darkgrey <- adjustcolor("darkgrey", alpha.f = 0.6)
 plot(
   all_pokemon$Attack,
   all_pokemon$Health,
-  col = transparent_purple,
+  col = transparent_darkgrey,
   pch = 16,
   cex = 0.50,
   main = "Pokemon Health vs Attack",
   xlab = "Attack",
-  ylab = "Health",
+  ylab = "Health"
+)
+
+#trendline
+abline(
+  lm(all_pokemon$Health ~ all_pokemon$Attack),
+  col = "black",
+  lwd = 2
 )
 
 #health vs weight scatterplot
@@ -75,16 +82,118 @@ sum(is.na(all_pokemon$Weight..lbs.))
 range(all_pokemon$Weight..lbs., na.rm = TRUE)
 
 #scatterplot graph
-trasnparent_darkgrey <- adjustcolor("darkgrey", alpha.f = 0.6 )
 plot(
   all_pokemon$Weight..lbs.,
   all_pokemon$Health,
-  col = transparent_purple,
+  col = transparent_darkgrey,
   pch = 16,
   cex = 0.50,
   main = "Pokemon Health vs. Weight",
   xlab = "Weight (lbs)",
   ylab = "Health"
+)
+#trendline
+abline(lm(Health ~ Weight..lbs., data = all_pokemon),
+       col = "black",
+       lwd = 2
+)
+
+#health vs height scatterplot
+#checking height data
+#checks data type
+class(all_pokemon$Height..in.)
+#counts missing height values
+sum(is.na(all_pokemon$Height..in.))
+#shows min and max height values
+range(all_pokemon$Height..in., na.rm = TRUE)
+
+#scatterplot graph 
+plot(
+  all_pokemon$Height..in.,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Pokemon Health vs Height",
+  xlab = "Height (in)",
+  ylab = "Health"
+)
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Height..in.),
+       col = "black",
+       lwd = 2
+)
+
+#health vs speed scatterplot
+#checking speed data
+#check data type
+class(all_pokemon$Speed)
+#counts missing Speed values
+sum(is.na(all_pokemon$Speed))
+#shows min and max values 
+range(all_pokemon$Speed, na.rm = TRUE)
+
+#scatterplot graph
+plot(
+  all_pokemon$Speed,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Pokemon Health vs Speed",
+  xlab = "Speed",
+  ylab = "Health"
+)
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Speed),
+       col = "black",
+       lwd = 2
+)
+
+#health vs defense scatterplot
+#checking defense data for data type, missing values and min/max
+class(all_pokemon$Defense)
+sum(is.na(all_pokemon$Defense))
+range(all_pokemon$Defense, na.rm = TRUE)
+
+#scatterplot graph
+plot(
+  all_pokemon$Defense,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Health vs Defense",
+  xlab = "Defense",
+  ylab = "Health"
+)
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Defense),
+       col = "black",
+       lwd = 2
+)
+
+#health vs special attack
+#checking special attack data types, missing values and min/max
+class(all_pokemon$Special.Attack)
+sum(is.na(all_pokemon$Special.Attack))
+range(all_pokemon$Special.Attack, na.rm = TRUE)
+
+#scatterplot graph
+plot(
+  all_pokemon$Special.Attack,
+  all_pokemon$Health,
+  col = transparent_darkgrey,
+  pch = 16,
+  cex = 0.50,
+  main = "Health vs Special Attack",
+  xlab = "Special Attack",
+  ylab = "Health"
+)
+#trendline
+abline(lm(all_pokemon$Health ~ all_pokemon$Special.Attack),
+       col = "black",
+       lwd = 2
 )
 
 #health by legendary status boxplot
@@ -98,7 +207,7 @@ boxplot(
   #category values gray = non legend, gold = legend
   col = c("red", "gold"), 
   border = "black",
-  outcex = 0.5,
+  outcex = 0.50,
   names = c("Non-Legendary", "Legendary"),
   horizontal = TRUE,
   main = "Pokemon Health by Legendary Status",
@@ -202,5 +311,3 @@ barplot(
   xlab = "Primary Type",
   ylab = "Mean Health"
 )
-
-
